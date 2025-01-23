@@ -4,6 +4,9 @@ ENV NODE_ENV production
 
 WORKDIR /home/node
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 # Temporarily switch to root user
 USER root
 # Install @nestjs/cli globally
