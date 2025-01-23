@@ -4,11 +4,7 @@ import { PrismaClient } from '@prisma/client';
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
-    let databaseUrl = ''
-    try {
-      databaseUrl = process?.env?.DATABASE_URL
-    } catch (error) {}
-    const print = `The connection URL is ${databaseUrl}`
+    const print = `The connection URL is ${process?.env?.DATABASE_URL}`
     console.error(print)
     await this.$connect();
   }
