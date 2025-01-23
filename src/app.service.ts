@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return `The connection URL is ${process.env.DATABASE_URL.substring(40)}`;
+    const databaseUrl = process.env.DATABASE_URL
+    return `The connection URL is ${databaseUrl}`;
   }
 }
